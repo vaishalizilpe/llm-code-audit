@@ -1,0 +1,7 @@
+__pycache__/
+.DS_Store
+*.pyc
+# Local only. Maps findings back to repo names, which is exactly what the
+# published output must never contain.
+sample/
+findings_raw.json
