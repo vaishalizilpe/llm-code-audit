@@ -1,0 +1,14 @@
+name: test
+on: [push, pull_request]
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      # No dependencies. The scanner is stdlib ast and nothing else.
+      - run: python3 test_rules.py
+      # The scanner must pass its own rules. R4 is the reason this file exists.
+      - run: python3 audit.py .
