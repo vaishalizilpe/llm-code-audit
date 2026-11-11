@@ -5,3 +5,9 @@ __pycache__/
 # published output must never contain.
 sample/
 findings_raw.json
+
+# Counts only, so it is safe to publish, but it stays untracked until there is
+# a real sample with the hand labelled precision check behind it. A committed
+# results.json gets read as a finding, and the first one here held fifteen
+# repos from an end-to-end test.
+results.json
